@@ -38,23 +38,12 @@ OpenSCAP is an open-source tool that leverages SCAP standards to automate the as
 ## Installing OpenSCAP on Ubuntu Server
 
 ```bash
-$ sudo apt update# Install SCAP Security Guides
-
-In addition to OpenSCAP, we need to install the SCAP Security Guide (SSG) for our Debian-based system.
-
-SSGs are security policies that transform STIGs (and other security guidelines) into a machine-readable format (XCCDF) that can be used by OpenSCAP to scan your system for vulnerabilities and compliance.
-
-We need the guide for Ubuntu 20.04. To get this, we can download the latest SSG packages from the ComplianceAsCode project.
-
-## Download the Latest Scap Security Guide
-
-```bash
-$ sudo git clone https://github.com/pkpraveen267/Ubuntu-Scap-security-guide.git
+$ sudo apt update
 $ sudo apt install libopenscap8
 $ wget https://security-metadata.canonical.com/oval/com.ubuntu.$(lsb_release -cs).usn.oval.xml.bz2
 $ bunzip2 com.ubuntu.focal.usn.oval.xml.bz2
 $ oscap oval eval --report cve_report.html com.ubuntu.focal.usn.oval.xml
-*************************************************************************************************************************************************************
+
 # Install SCAP Security Guides
 
 In addition to OpenSCAP, we need to install the SCAP Security Guide (SSG) for our Debian-based system.
@@ -67,4 +56,3 @@ We need the guide for Ubuntu 20.04. To get this, we can download the latest SSG 
 
 ```bash
 $ sudo git clone https://github.com/pkpraveen267/Ubuntu-Scap-security-guide.git
-
