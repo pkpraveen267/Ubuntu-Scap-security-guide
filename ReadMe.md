@@ -54,8 +54,7 @@ $ sudo apt install libopenscap8
 $ wget https://security-metadata.canonical.com/oval/com.ubuntu.$(lsb_release -cs).usn.oval.xml.bz2
 $ bunzip2 com.ubuntu.focal.usn.oval.xml.bz2
 $ oscap oval eval --report cve_report.html com.ubuntu.focal.usn.oval.xml
-
-
+*************************************************************************************************************************************************************
 # Install SCAP Security Guides
 
 In addition to OpenSCAP, we need to install the SCAP Security Guide (SSG) for our Debian-based system.
