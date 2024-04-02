@@ -44,4 +44,48 @@ $ wget https://security-metadata.canonical.com/oval/com.ubuntu.$(lsb_release -cs
 $ bunzip2 com.ubuntu.focal.usn.oval.xml.bz2
 $ oscap oval eval --report cve_report.html com.ubuntu.focal.usn.oval.xml
 ```
+## Install SCAP Security Guides
+```bash
+$ sudo git clone https://github.com/pkpraveen267/Ubuntu-Scap-security-guide.git
+$ cd scap-security-guide-0.1/ssg_guide_ubuntu
+$ oscap info ssg-ubuntu2004-ds-1.2.xml
+$ sudo oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_stig --report report.html ssg-ubuntu2004-ds-1.2.xml
+```
+## Interactive User Guide
 
+   # Update System:
+        Run sudo apt update to ensure your system is up to date.
+
+  # Install OpenSCAP:
+        Install OpenSCAP using sudo apt install libopenscap8.
+
+  #  Download OVAL Content:
+        Download OVAL content for your Ubuntu version.
+```bash
+$ wget https://security-metadata.canonical.com/oval/com.ubuntu.$(lsb_release -cs).usn.oval.xml.bz2
+$ bunzip2 com.ubuntu.focal.usn.oval.xml.bz2
+```
+## Scan the System:
+
+   # Use OpenSCAP to scan your Ubuntu system.
+```bash
+$ oscap oval eval --report cve_report.html com.ubuntu.focal.usn.oval.xml
+```
+## Install SCAP Security Guides:
+
+  # Clone the SCAP Security Guide repository.
+
+```bash
+
+$ sudo git clone https://github.com/pkpraveen267/Ubuntu-Scap-security-guide.git
+$ cd scap-security-guide-0.1/ssg_guide_ubuntu
+```
+## Evaluate STIG Profile:
+
+   # Use OpenSCAP to evaluate the STIG profile and generate a report.
+
+```bash
+
+$ sudo oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_stig --report report.html ssg-ubuntu2004-ds-1.2.xml
+```
+## Ensure to replace ssg-ubuntu2004-ds-1.2.xml with the correct file for your Ubuntu version ##
